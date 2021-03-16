@@ -30,3 +30,22 @@
 //     if(x)return 
 // }
 
+function strToArr(str){
+    let arr = []
+    let newWord = ''
+
+    for(let i = 0; i<str.length;i++){
+        if(str[i] === ' '){
+            arr.push(newWord)
+            newWord = ''
+            continue
+        }
+        newWord += str[i]
+    }
+    if(newWord.length){
+        arr.push(newWord)
+    }
+    return arr
+}
+
+console.log(strToArr('Life is good'))
