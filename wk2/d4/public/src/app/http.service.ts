@@ -5,19 +5,15 @@ import { HttpClient } from'@angular/common/http'
   providedIn: 'root'
 })
 export class HttpService {
-
-  constructor(private _http: HttpClient) { 
-    console.log('init')
-    this.getTasks()
-  }
-
+  
+  constructor(private _http: HttpClient) { }
+  
   getTasks(){
-    console.log('getting tasks')
-    const tempObservable = this._http.get('/api/tasks')
-
-    tempObservable.subscribe(data => {
-      console.log('tasks:', data)
-    })
+    return this._http.get<{name:string,completed:boolean}[]>('/api/tasks')
+    
   }
-
+  updateTask(task, index) {
+    return this._http.post('/api/tasks/'+index,task)
+  }
+  
 }

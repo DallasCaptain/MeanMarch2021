@@ -1,0 +1,5 @@
+<div>
+    <ul>
+        <li *ngFor='let task of tasks'>{{task.name}} is/are completed: <span class='red' *ngIf='!task.completed'>{{task.completed}}</span><span class='green' *ngIf='task.completed'>{{task.completed}}</span></li>
+    </ul>
+</div>
