@@ -1,0 +1,10 @@
+<div>
+    Child
+    <p>{{parentpoints}}</p>
+    <form (submit)='givePoints()'>
+        <input type="number" name="points" [(ngModel)]="points">
+        <input type="submit" value="Send points">
+    </form>
+    <button (click)='givePoints()'>give points</button>
+</div>
+
